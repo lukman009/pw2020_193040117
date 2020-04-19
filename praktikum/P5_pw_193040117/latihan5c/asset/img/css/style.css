@@ -1,0 +1,15 @@
+body{
+  background-color: lightblue;
+}
+img{
+  width :200px;
+}
+.container{
+  background-color: darkgrey;
+  borde : 3px solid black;
+  width: 220px;
+  padding-left:5;
+  padding-bottom: 5;
+  padding padding-top: 5;
+  font-family:arial;
+}

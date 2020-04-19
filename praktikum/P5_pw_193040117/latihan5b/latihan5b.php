@@ -32,7 +32,7 @@ $makanan = query("SELECT * FROM makanan");
      foreach ($makanan as $m) : ?>
       <tr>
         <td><?= $i++; ?></td>
-        <td><img src="img/<?= $m['gambar']; ?> " width="80"></td>
+        <td><img src="asset/img/<?= $m['gambar']; ?> " width="80"></td>
         <td><?= $m['nama']; ?></td>
         <td><?= $m['Asal']; ?></td>
         <td><?= $m['harga']; ?></td>
