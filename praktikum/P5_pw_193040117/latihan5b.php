@@ -1,18 +1,7 @@
 <?php
-// Koneksi ke DB & Pilih Database
-$conn = mysqli_connect('localhost', 'root', '', 'pw_193040117');
+require 'function.php';
 
-//Query isi tabel makanan
-$result = mysqli_query($conn, "SELECT * FROM makanan");
-
-
-//ubah data dalam array
-$rows = [];
-while ($row = mysqli_fetch_assoc($result)) {
-  $rows[] = $row;
-}
-//tampung ke variable makanan
-$makanan = $rows;
+$makanan = query("SELECT * FROM makanan");
 ?>
 
 
@@ -39,8 +28,8 @@ $makanan = $rows;
 
 
     </tr>
-    <?php $i = 1;
-    foreach ($makanan as $m) : ?>
+    <?php $i =1; 
+     foreach ($makanan as $m) : ?>
       <tr>
         <td><?= $i++; ?></td>
         <td><img src="img/<?= $m['gambar']; ?> " width="80"></td>
