@@ -3,16 +3,17 @@ session_start();
 
 if(isset($_SESSION['login'])){
   header("Location: index.php");
+  exit;
 }
-
 require 'function.php';
 
-// ketika tombol login di tekan
-if(isset($_POST['login'])){
-  $login = login($_POST);
+// ketika tombol login ditekan
+if (isset($_POST['login'])){
+ $login = login($_POST);
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +22,13 @@ if(isset($_POST['login'])){
   <title>Login</title>
 </head>
 <body>
+  <div class="container"></div>
       <h1>Login</h1>
       <?php if(isset($login['error'])) : ?>
-      <p style="color: blue; font-style:italic;"><?=$login['pesan'];?></p>
+      <p style="color: red; font-style:italic;"><?=$login['pesan'];?></p>
       <?php endif; ?>  
 
-      <form action=""method="post">
+      <form action=""method="POST">
         <ul>
         <li>
         <label for=""></label>

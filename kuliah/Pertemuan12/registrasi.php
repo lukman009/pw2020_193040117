@@ -1,8 +1,8 @@
 <?php 
 require 'function.php';
 
-  if(isset($_POST['registrasi'])){
-    if( registrasi($_POST) > 0 ){
+  if (isset($_POST['registrasi'])){
+    if ( registrasi($_POST) > 0 ){
       echo "<script>
       alert('user baru berhasil ditambahkan. silahkan login);
       document.location.href = 'login.php'

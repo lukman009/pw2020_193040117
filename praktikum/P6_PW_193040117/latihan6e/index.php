@@ -28,7 +28,7 @@ $makanan = query("SELECT * FROM makanan");
         </p>
       <?php endforeach;?>
     </div>
-
+    <a href="php/admin.php" style="color: green">Ke halaman admin</a>
 
   
   </table>

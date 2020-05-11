@@ -1,27 +1,20 @@
 <?php
-session_start();
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
 require 'function.php';
-$id = $_GET['id'];
-$m =query("SELECT * FROM makanan WHERE id = $id");
 
-if(isset ($_POST['ubah'])) {
+if(isset ($_POST['tambah'])) {
   if(tambah($_POST) > 0){
 
   
 echo"
 <script>
-  alert('Data Berhasil diubah!');
+  alert('Data Berhasil ditambahkan!');
   document.location.href = 'admin.php';
 </script>
 ";
 } else {
 echo"
 <script>
-  alert('Data Gagal diubah!')
+  alert('Data Gagal ditambahkan!')
   document.location.href = 'admin.php';
 </script>
 ";
@@ -29,7 +22,7 @@ echo"
   }
 ?>
 
-<h3>Form ubah Data Makanan</h3>
+<h3>Form Tambah Data Makanan</h3>
 <form action="" method="post">
   <ul>
     <li>
@@ -52,7 +45,7 @@ echo"
     </li>
     <li>
       <br>
-      <button type="submit" name="ubah">Ubah Data</button>
+      <button type="submit" name="tambah">Tambah Data</button>
       <button type="submit">
         <a href="../index.php" style="text-decoration: none; color :black">Kembali</a>
       </button>

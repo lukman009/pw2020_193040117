@@ -25,6 +25,11 @@ $makanan = query("SELECT * FROM makanan");
 </head>
 
 <body>
+  <?php if(empty($makanan)) : ?>
+    <div>
+      <h1>Data Tidak Ditemukan</h1>
+    </div>
+    <?php else : ?>
     <div class="container">
       <?php foreach($makanan as $m):?>
         <p class="nama">
@@ -34,6 +39,7 @@ $makanan = query("SELECT * FROM makanan");
         </p>
       <?php endforeach;?>
     </div>
+      <?php endif; ?>
     <a href="admin.php" style="color:blue;">Halaman Admin</a><br>
     <a href="logout.php">Logout</a>
 

@@ -1,8 +1,9 @@
-<?php 
+<?php
 
-function koneksi (){
-  return mysqli_connect('localhost', 'root','','pw_193040117');
-  mysqli_select_db($conn,"tubes_193040117")or die("Database salah!");
+function koneksi()
+{
+  $conn = mysqli_connect('localhost', 'root', '', 'pw_193040117');
+
 
   return $conn;
 }
@@ -40,7 +41,7 @@ function tambah($data){
   //function untuk menghapus data
   function hapus($id){
   $conn = koneksi();
-  mysqli_query($conn, "DELETE FROM masakan WHERE id=$id");
+  mysqli_query($conn, "DELETE FROM makanan WHERE id=$id");
   
   return mysqli_affected_rows($conn);
 }

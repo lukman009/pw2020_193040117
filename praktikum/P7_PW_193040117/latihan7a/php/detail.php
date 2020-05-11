@@ -1,9 +1,4 @@
 <?php
-session_start();
-if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
-  exit;
-}
 require 'function.php';
 
 //ambil id dari url
@@ -21,7 +16,7 @@ $m = query("SELECT * FROM makanan WHERE id = $id")[0];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail Makanan</title>
-
+ 
 </head>
 
 <body>
@@ -33,9 +28,8 @@ $m = query("SELECT * FROM makanan WHERE id = $id")[0];
     <li>Harga : <?= $m['harga']; ?></li>
     <li><a href="">ubah</a> | <a href="">hapus</a></li>
     <li><a href="../index.php">kembali ke daftar makanan</a></li>
-
+   
   </ul>
-
 
 </body>
 
