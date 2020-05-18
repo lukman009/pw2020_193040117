@@ -7,48 +7,49 @@ if (!isset($_SESSION["username"])) {
 }
 require 'function.php';
 $id = $_GET['id'];
-$m =query("SELECT * FROM makanan WHERE id = $id");
+$m = query("SELECT * FROM makanan WHERE id = $id")[0];
 
-if(isset ($_POST['ubah'])) {
-  if(tambah($_POST) > 0){
+if (isset($_POST['ubah'])) {
+  if (ubah($_POST) > 0) {
 
-  
-echo"
+
+    echo "
 <script>
   alert('Data Berhasil diubah!');
   document.location.href = 'admin.php';
 </script>
 ";
-} else {
-echo"
+  } else {
+    echo "
 <script>
   alert('Data Gagal diubah!')
   document.location.href = 'admin.php';
 </script>
 ";
-    }
   }
+}
 ?>
 
 <h3>Form ubah Data Makanan</h3>
 <form action="" method="post">
+  <input type="hidden" name="id" value="<?= $m['id'] ?>">
   <ul>
     <li>
       <label for="gambar">Gambar : </label><br>
-      <input type="text" name="gambar" id="gambar" required><br><br>
+      <input type="text" name="gambar" id="gambar" required value="<?= $m['gambar'] ?>"><br><br>
     </li>
     <li>
 
       <lable for="nama">Nama : </lable><br>
-      <input type="text" name="nama" id="nama" required><br><br>
+      <input type="text" name="nama" id="nama" required value="<?= $m['nama'] ?>"><br><br>
     </li>
     <li>
       <label for="Asal">Asal Makanan : </label><br>
-      <input type="text" name="Asal" id="Asal" required><br><br>
+      <input type="text" name="Asal" id="Asal" required value="<?= $m['Asal'] ?>"><br><br>
     </li>
     <li>
       <label for="harga">Harga : </label><br>
-      <input type="text" name="harga" id="harga" required><br><br>
+      <input type="text" name="harga" id="harga" required value="<?= $m['harga'] ?>"><br><br>
 
     </li>
     <li>

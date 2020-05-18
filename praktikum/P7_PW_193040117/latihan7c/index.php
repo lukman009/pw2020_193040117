@@ -54,7 +54,7 @@ $makanan = query("SELECT * FROM makanan");
   </div>
     <?php endif; ?>
 
-    <a href="php/admin.php" style="color:green;">Ke halaman admin</a>
+    <a href="php/login.php" style="color:green;">Ke halaman admin</a>
 
 
   </table>

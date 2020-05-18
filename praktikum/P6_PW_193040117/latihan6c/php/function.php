@@ -2,8 +2,8 @@
 
 function koneksi ()
 {
-  return mysqli_connect('localhost', 'root','','pw_193040117');
-  mysqli_select_db($conn,"tubes_193040117")or die("Database salah!");
+  $conn = mysqli_connect('localhost', 'root','','pw_193040117');
+  mysqli_select_db ($conn,"tubes_193040117")or die("Database salah!");
 
   return $conn;
 }
